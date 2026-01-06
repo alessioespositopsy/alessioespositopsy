@@ -4,196 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Alessio Esposito | Psicologo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        :root {
-            --primary: #4A5D4E; /* Verde salvia scuro */
-            --accent: #D4A373;  /* Terra di siena tenue */
-            --bg: #FAFAFA;
-            --text: #2C2C2C;
-            --light-green: #E9EDC9;
-        }
-
+        :root { --primary: #4A5D4E; --accent: #D4A373; --bg: #FAFAFA; --text: #2C2C2C; --soft: #F2E9E4; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
         
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Navigazione */
-        nav {
-            padding: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: absolute;
-            width: 100%;
-            z-index: 10;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
         /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 0 10%;
-            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 600px;
-            z-index: 2;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.8;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background-color: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            font-weight: 600;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(74, 93, 78, 0.2);
-        }
-
-        /* Immagine con forma organica */
-        .hero-image {
-            position: absolute;
-            right: 5%;
-            width: 40%;
-            height: 70%;
-            background: url('https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?auto=format&fit=crop&q=80') center/cover;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            animation: morph 10s ease-in-out infinite;
-        }
-
-        @keyframes morph {
-            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-            50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
-            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-        }
-
-        /* Sezione Servizi (Bento Grid) */
-        .section { padding: 8rem 10%; }
+        .hero { height: 80vh; display: flex; align-items: center; padding: 0 10%; background: white; }
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem); color: var(--primary); line-height: 1.1; }
         
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 4rem;
+        /* Sezione Chi Sono con Foto */
+        .about-section { padding: 6rem 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; background: var(--soft); }
+        
+        .image-box { position: relative; width: 100%; max-width: 400px; margin: 0 auto; }
+        
+        /* Questa è la classe per la tua foto profilo */
+        .profile-img { 
+            width: 100%; 
+            height: 450px; 
+            object-fit: cover; 
+            border-radius: 40px; 
+            position: relative; 
+            z-index: 2; 
+            background: #ccc; /* Grigio finché non metti la foto */
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+        .image-box::after {
+            content: ''; position: absolute; width: 100%; height: 100%;
+            border: 2px solid var(--accent); border-radius: 40px;
+            top: 20px; left: 20px; z-index: 1;
         }
 
-        .card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 24px;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
+        .btn { display: inline-block; padding: 1rem 2rem; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; transition: 0.3s; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
-        .card:hover {
-            background: var(--light-green);
-            transform: scale(1.02);
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 4rem 10%; }
+        .card { background: white; padding: 2rem; border-radius: 20px; text-align: center; }
 
-        .card i { color: var(--accent); margin-bottom: 1.5rem; }
-        .card h3 { margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .hero-image { display: none; }
-            .grid { grid-template-columns: 1fr; }
-            .hero { text-align: center; }
-        }
+        @media (max-width: 768px) { .about-section { grid-template-columns: 1fr; text-align: center; } }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Dr. Alessio Esposito</div>
-        <div>
-            <a href="#contatti" class="btn" style="padding: 0.6rem 1.5rem;">Contattami</a>
-        </div>
-    </nav>
-
     <section class="hero">
-        <div class="hero-content">
-            <h1>Ritrova il tuo spazio interiore.</h1>
-            <p>Supporto psicologico per adulti e coppie. Un percorso verso la consapevolezza e il benessere emotivo.</p>
-            <a href="#servizi" class="btn">Scopri come lavoro</a>
-        </div>
-        <div class="hero-image"></div>
-    </section>
-
-    <section class="section" id="servizi">
-        <h2 class="section-title">Aree di Intervento</h2>
-        <div class="grid">
-            <div class="card">
-                <i data-lucide="brain"></i>
-                <h3>Gestione Ansia</h3>
-                <p>Strumenti pratici per affrontare stress e attacchi di panico nel quotidiano.</p>
-            </div>
-            <div class="card">
-                <i data-lucide="users"></i>
-                <h3>Terapia di Coppia</h3>
-                <p>Riscoprire la comunicazione e ricostruire il legame affettivo.</p>
-            </div>
-            <div class="card">
-                <i data-lucide="heart"></i>
-                <h3>Autostima</h3>
-                <p>Un percorso per valorizzare te stesso e le tue potenzialità.</p>
-            </div>
+        <div>
+            <h1>Dott. Alessio Esposito</h1>
+            <p style="font-size: 1.5rem; margin: 1rem 0 2rem 0; opacity: 0.8;">Psicologo e Psicoterapeuta</p>
+            <a href="#contatti" class="btn">Prenota un colloquio</a>
         </div>
     </section>
 
-    <section class="section" style="background: var(--primary); color: white; text-align: center;">
-        <h2 class="section-title" style="color: white;">Iniziamo insieme?</h2>
-        <p style="margin-bottom: 2rem; font-size: 1.2rem;">Ricevo in studio e online su appuntamento.</p>
-        <a href="mailto:tuaemail@esempio.com" class="btn" style="background: var(--accent);">Invia un messaggio</a>
-    </section>
-
-    <script>
-        // Attiva le icone
-        lucide.createIcons();
-    </script>
-</body>
-</html>
+    <section class="about-section">
+        <div class="image-box">
+            <img src="foto-profilo.jpg" alt="Alessio Esposito" class="profile-img">
+        </div>
+        <div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem;">Chi Sono</h2>
+            <p>Benvenuto. Sono il Dott. Alessio Esposito. Nel mio lavoro aiuto le persone a ritrovare il proprio benessere attraverso un percorso di ascolto e condivisione.</p>
+            
+            <div style="margin-top: 2rem
