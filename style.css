@@ -1,0 +1,85 @@
+/* Reset base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #FFFFFF; /* bianco */
+    color: #333333; /* testo grigio scuro */
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #3E7D3D; /* verde scuro istituzionale */
+    color: #FFFFFF;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+/* Sezioni */
+section {
+    margin: 30px 0;
+}
+
+/* Pulsanti principali */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px 5px 10px 0;
+    background-color: #3E7D3D; /* verde scuro */
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #2B5226; /* verde scuro hover */
+}
+
+/* Pulsanti secondari (verde chiaro) */
+.btn-secondary {
+    background-color: #A3C586; /* verde chiaro */
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: #7FA461; /* verde chiaro hover */
+}
+
+/* Link generici */
+a {
+    color: #3E7D3D;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    color: #666666;
+    border-top: 1px solid #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 0 10px;
+    }
+}
