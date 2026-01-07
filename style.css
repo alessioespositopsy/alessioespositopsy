@@ -1,85 +1,156 @@
-/* Reset base */
+/* ============================================================
+   VARIABILI E DESIGN SYSTEM (Fondamentale per la coerenza)
+   ============================================================ */
+:root {
+    /* Palette Colori - Psicologia della Salute Mentale */
+    --primary: #3E7D3D;       /* Verde Istituzionale */
+    --primary-dark: #2B5226;
+    --accent: #D4A373;        /* Calore ed Empatia */
+    --text-main: #2C332C;     /* Grigio fango (più morbido del nero) */
+    --text-light: #666666;
+    --bg-light: #FAFAFA;
+    --white: #FFFFFF;
+    
+    /* Spaziature dinamiche (Impeccabilità dei margini) */
+    --section-padding: clamp(4rem, 8vw, 8rem);
+    --container-width: 1200px;
+    --border-radius: 12px;
+}
+
+/* ============================================================
+   RESET & BASE (SEO: Accessibilità e velocità)
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; /* Rende i font più nitidi */
 }
 
-/* Body */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #FFFFFF; /* bianco */
-    color: #333333; /* testo grigio scuro */
-    line-height: 1.6;
-    padding: 0 20px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--white);
+    color: var(--text-main);
+    line-height: 1.65; /* Interlinea ottimizzata per la lettura */
+    overflow-x: hidden;
 }
 
-/* Header */
+/* Container centrale per evitare testi collusi con i margini */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 5%; /* Safe area per mobile e desktop */
+}
+
+/* ============================================================
+   TIPOGRAFIA (SEO: Gerarchia H1-H6)
+   ============================================================ */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Da caricare in HTML */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(2rem, 4vw, 2.8rem); }
+
+/* ============================================================
+   HEADER & NAVIGATION
+   ============================================================ */
 header {
-    text-align: center;
-    padding: 30px 0;
-    background-color: #3E7D3D; /* verde scuro istituzionale */
-    color: #FFFFFF;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-header h1 {
-    font-size: 2em;
-}
-
-/* Sezioni */
+/* ============================================================
+   SEZIONI E LAYOUT
+   ============================================================ */
 section {
-    margin: 30px 0;
+    padding: var(--section-padding) 0;
 }
 
-/* Pulsanti principali */
+.bg-soft { background-color: var(--bg-light); }
+
+/* ============================================================
+   PULSANTI (Puntamento alla conversione / CTA)
+   ============================================================ */
 .btn {
-    display: inline-block;
-    padding: 12px 25px;
-    margin: 10px 5px 10px 0;
-    background-color: #3E7D3D; /* verde scuro */
-    color: #FFFFFF;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    background-color: var(--primary);
+    color: var(--white) !important;
+    text-decoration: none !important;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 2px solid transparent;
+    cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #2B5226; /* verde scuro hover */
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(62, 125, 61, 0.2);
 }
 
-/* Pulsanti secondari (verde chiaro) */
 .btn-secondary {
-    background-color: #A3C586; /* verde chiaro */
-    color: #FFFFFF;
+    background-color: transparent;
+    border-color: var(--primary);
+    color: var(--primary) !important;
 }
 
 .btn-secondary:hover {
-    background-color: #7FA461; /* verde chiaro hover */
+    background-color: var(--primary);
+    color: var(--white) !important;
 }
 
-/* Link generici */
-a {
-    color: #3E7D3D;
-    text-decoration: none;
+/* ============================================================
+   FOTO E IMMAGINI (SEO: Aspect Ratio)
+   ============================================================ */
+.img-responsive {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    object-fit: cover;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
+/* ============================================================
+   FOOTER
+   ============================================================ */
 footer {
-    text-align: center;
-    padding: 20px 0;
-    font-size: 0.9em;
-    color: #666666;
-    border-top: 1px solid #ddd;
+    background-color: var(--text-main);
+    color: var(--white);
+    padding: 4rem 0 2rem 0;
+    font-size: 0.95rem;
 }
 
-/* Responsive */
+footer a { color: var(--accent); }
+
+/* ============================================================
+   RESPONSIVE DESIGN (Impeccabile su ogni device)
+   ============================================================ */
 @media (max-width: 768px) {
-    body {
-        padding: 0 10px;
+    :root {
+        --section-padding: 3rem;
     }
+    
+    .container {
+        padding: 0 7%; /* Più spazio sui lati per mobile */
+    }
+
+    header { padding: 1.5rem 0; }
 }
+
+/* Utility per evitare margini collusi */
+.mt-2 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 2rem; }
