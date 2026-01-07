@@ -4,23 +4,45 @@
     <meta charset="UTF-8">
     <title>Contatti | Dott. Alessio Esposito</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <header><div class="container"><h1>Contatti</h1></div></header>
-    
+    <header>
+        <div class="container">
+            <h1>Contatti e Dove Ricevo</h1>
+            <p>Iniziamo un percorso insieme</p>
+        </div>
+    </header>
+
     <main class="container section-padding">
-        <div style="text-align: center; margin-bottom: 50px;">
-            <h3>Studio Professionale</h3>
-            <p>Viale Giuseppe Mazzini 134, 00195 Roma (Rione Prati)</p>
-            <p>Email: <a href="mailto:alessio.esposito@email.com" style="color: var(--primary);">alessio.esposito@email.com</a></p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 50px;">
+            <div class="card-bio">
+                <h3 style="color: var(--primary); margin-bottom: 15px;">Recapiti Professionali</h3>
+                <p><strong>Sede:</strong> Viale Giuseppe Mazzini 134, 00195 Roma (Prati)</p>
+                <p><strong>Telefono:</strong> +39 347 123 4567 </p>
+                <p><strong>Email:</strong> <a href="mailto:alessio.esposito@email.com" style="color: var(--primary);">alessio.esposito@email.com</a></p>
+                <p style="margin-top: 15px; font-size: 0.9rem;">Iscrizione Ordine Psicologi Lazio n. 28731</p>
+            </div>
+            
+            <div class="card-bio" style="border-left-color: var(--primary);">
+                <h3 style="color: var(--primary); margin-bottom: 15px;">Orari di Ricevimento</h3>
+                <p>Si riceve esclusivamente su appuntamento.</p>
+                <p>Dal Lunedì al Venerdì: 09:00 - 20:00</p>
+                <div style="margin-top: 20px;">
+                    <a href="INSERISCI_LINK_MODULO" class="btn">Prenota un colloquio</a>
+                </div>
+            </div>
         </div>
 
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.918991732585!2d12.4593!3d41.9168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f605f6343564f%3A0x600b67710928956b!2sViale%20Giuseppe%20Mazzini%2C%20134%2C%2000195%20Roma%20RM!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+        <h3 style="text-align: center; margin-bottom: 20px;">Come arrivare</h3>
         
-        <div style="margin-top: 40px; text-align: center;">
-            <p>Verifica la mia iscrizione: <a href="https://ordinepsicologilazio.it/albo/alessio-esposito" target="_blank" style="color: var(--primary);">Albo Ufficiale Ordine Lazio</a></p>
+        <div class="map-container" style="margin-bottom: 20px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.918!2d12.4571944!3d41.9159722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f60403c3ebbb3%3A0x6e236b44175bcf3c!2sViale%20Giuseppe%20Mazzini%2C%20134%2C%2000195%20Roma%20RM!5e0!3m2!1sit!2sit!4v1715850000000!5m2!1sit!2sit" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <h4 style="margin: 30px 0 15px;">Il portone dello studio</h4>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1715850000000!6m8!1m7!1scR0_9W8J9J4J0G0!2m2!1d41.9161!2d12.4572!3f170!4f0!5f0.7820865974627469" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </main>
 </body>
