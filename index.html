@@ -3,65 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Alessio Esposito | Psicologo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <title>Psicologo in Presenza a [Città] | Dott. Alessio Esposito</title>
+    <meta name="description" content="Cerchi uno psicologo in presenza a [Città]? Il Dott. Alessio Esposito riceve nel suo studio per percorsi di psicoterapia individuale e di coppia. Prenota ora.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        :root { --primary: #4A5D4E; --accent: #D4A373; --bg: #FAFAFA; --text: #2C2C2C; --soft: #F2E9E4; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
-        
-        /* Hero Section */
-        .hero { height: 80vh; display: flex; align-items: center; padding-top: 100px: 0 10%; background: white; }
-        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem); color: var(--primary); line-height: 1.1; }
-        
-        /* Sezione Chi Sono con Foto */
-        .about-section { padding: 6rem 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; background: var(--soft); }
-        
-        .image-box { position: relative; width: 100%; max-width: 400px; margin: 0 auto; }
-        
-        /* Questa è la classe per la tua foto profilo */
-        .profile-img { 
-            width: 100%; 
-            height: 450px; 
-            object-fit: cover; 
-            border-radius: 40px; 
-            position: relative; 
-            z-index: 2; 
-            background: #ccc; /* Grigio finché non metti la foto */
-        }
-
-        .image-box::after {
-            content: ''; position: absolute; width: 100%; height: 100%;
-            border: 2px solid var(--accent); border-radius: 40px;
-            top: 20px; left: 20px; z-index: 1;
-        }
-
-        .btn { display: inline-block; padding: 1rem 2rem; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; transition: 0.3s; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 4rem 10%; }
-        .card { background: white; padding: 2rem; border-radius: 20px; text-align: center; }
-
-        @media (max-width: 768px) { .about-section { grid-template-columns: 1fr; text-align: center; } }
-    </style>
 </head>
 <body>
 
-    <section class="hero">
-        <div>
-            <h1>Dott. Alessio Esposito</h1>
-            <p style="font-size: 1.5rem; margin: 1rem 0 2rem 0; opacity: 0.8;">Psicologo e Psicoterapeuta</p>
-            <a href="#contatti" class="btn">Prenota un colloquio</a>
+    <header>
+        <div class="container">
+            <a href="index.html" style="color: white; text-decoration: none;">← Torna alla Home</a>
+            <h1 style="margin-top: 10px;">Consulenza in Presenza</h1>
         </div>
-    </section>
+    </header>
 
-    <section class="about-section">
-        <div class="image-box">
-            <img src="foto-profilo.jpg" alt="Alessio Esposito" class="profile-img">
+    <main>
+        <section>
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: center;">
+                    <div>
+                        <h2 style="color: var(--primary);">Lo Studio a [Città]</h2>
+                        <p class="mb-2">Ricevo i miei pazienti in un ambiente accogliente e riservato, pensato per favorire il rilassamento e l'apertura al dialogo. La terapia in presenza permette di cogliere ogni sfumatura della relazione terapeutica.</p>
+                        
+                        <div style="background: var(--soft); padding: 2rem; border-radius: var(--border-radius); border-left: 4px solid var(--accent);">
+                            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Indirizzo dello Studio:</h3>
+                            <p>[Via del tuo studio, numero civico]</p>
+                            <p>[CAP, Città, Provincia]</p>
+                        </div>
+                    </div>
+                    <div class="image-box">
+                        <img src="foto-studio.jpg" alt="Studio del Dott. Alessio Esposito" class="profile-img" style="background: #e5e7eb;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-soft">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem;">Perché scegliere la terapia in presenza</h2>
+                <div class="grid">
+                    <div class="card">
+                        <i data-lucide="home" size="32" style="color: var(--accent);"></i>
+                        <h3>Ambiente Neutro</h3>
+                        <p>Uno spazio dedicato esclusivamente a te, lontano dalle distrazioni e dalle interruzioni della quotidianità domestica.</p>
+                    </div>
+                    <div class="card">
+                        <i data-lucide="sparkles" size="32" style="color: var(--accent);"></i>
+                        <h3>Contatto Umano</h3>
+                        <p>La presenza fisica favorisce una sintonizzazione emotiva profonda e immediata tra terapeuta e paziente.</p>
+                    </div>
+                    <div class="card">
+                        <i data-lucide="shield-check" size="32" style="color: var(--accent);"></i>
+                        <h3>Privacy Totale</h3>
+                        <p>La garanzia di un luogo protetto dove poter esprimere liberamente ogni pensiero in totale sicurezza.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contatti">
+            <div class="container" style="text-align: center;">
+                <h2>Prenota un appuntamento in studio</h2>
+                <p class="mb-2">Verifica la disponibilità per un primo colloquio conoscitivo a [Città].</p>
+                <a href="mailto:alessioespositopsy@gmail.com" class="btn">Richiedi un appuntamento</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dott. Alessio Esposito | Psicologo e Psicoterapeuta</p>
         </div>
-        <div>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem;">Chi Sono</h2>
-            <p>Benvenuto. Sono il Dott. Alessio Esposito. Nel mio lavoro aiuto le persone a ritrovare il proprio benessere attraverso un percorso di ascolto e condivisione.</p>
-            
-            <div style="margin-top: 2rem
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
