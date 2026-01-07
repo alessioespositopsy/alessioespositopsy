@@ -2,23 +2,34 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Sono - Dott. Alessio Esposito</title>
+    <title>Chi Sono | Dott. Alessio Esposito</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <header><div class="container"><h1>Chi Sono</h1></div></header>
-    <main class="container">
-        <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;">
+    <header>
+        <div class="container">
+            <h1>Chi Sono</h1>
+            <p>Dott. Alessio Esposito - Psicologo Clinico</p>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: start;">
             <div>
                 <img src="foto-profilo.jpg" alt="Dott. Alessio Esposito" class="profile-img">
             </div>
             <div>
-                <h2 style="color: var(--primary); margin-bottom: 20px;">Il mio percorso</h2>
-                <p>Sono psicologo clinico e psicoterapeuta in formazione ASPIC. Seguo l'approccio Umanistico Esistenziale Gestaltico Integrato.</p>
-                <a href="index.html" style="display: block; margin-top: 20px;">← Torna alla Home</a>
+                <h2 style="color: var(--primary); margin-bottom: 20px;">Il mio percorso e la mia filosofia</h2>
+                <p>Sono uno Psicologo Clinico iscritto all'Ordine degli Psicologi del Lazio (n. 28731) e Psicoterapeuta in formazione al 4° anno presso la scuola <strong>ASPIC</strong>.</p>
+                <p>La mia pratica clinica si fonda sull'approccio <strong>Umanistico Esistenziale Gestaltico Integrato</strong>. Questo significa che al centro del mio lavoro non c'è mai solo il "disturbo", ma la <strong>Persona</strong> nella sua interezza. Credo fermamente che ogni individuo possieda le risorse necessarie per affrontare i momenti di crisi; il mio compito è accompagnarti nella scoperta di queste potenzialità in un clima di ascolto empatico e assenza di giudizio.</p>
+                <p>Oltre alla pratica privata, ho maturato esperienza nel supporto a individui, coppie e famiglie, aiutandoli a ritrovare un equilibrio e una comunicazione efficace.</p>
+                <div style="margin-top: 30px;">
+                    <a href="https://www.linkedin.com/in/alessioespositopsi/" target="_blank" class="btn" style="background: #0077b5;">Vedi profilo LinkedIn</a>
+                </div>
             </div>
-        </section>
+        </div>
     </main>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
