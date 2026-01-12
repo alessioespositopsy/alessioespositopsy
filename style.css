@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
 
 :root {
-    --primary: #2D5A27;    /* Verde Bosco */
+    --primary: #2D5A27;    /* Verde Bosco Unico */
     --accent: #D4A373;     /* Oro Caldo */
     --bg-warm: #FDFBF7;    /* Crema/Avorio */
     --text: #1F241F;       /* Grigio scuro quasi nero */
@@ -14,31 +14,23 @@ body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: var(--bg-warm);
     color: var(--text);
-    line-height: 1.6; /* Uniformato per leggibilità */
-    font-size: 16px;  /* Dimensione base bloccata */
+    line-height: 1.6;
+    font-size: 16px;
 }
 
 h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--primary); }
 
-/* HEADER COMPATTO (Punto 2) */
+/* HEADER & NAVIGAZIONE */
 header {
-    background: var(--primary);
-    padding: 40px 0; /* Ridotto drasticamente da 80/100px */
+    background: var(--primary); /* Verde Bosco ovunque */
+    padding: 30px 0;
     text-align: center;
     border-bottom: 4px solid var(--accent);
 }
 header h1 { color: var(--white); font-size: 2.2rem; margin: 0; }
 header p { color: rgba(255,255,255,0.9); font-size: 1rem; margin-top: 5px; }
 
-/* Hero Home specifica (leggermente più alta ma contenuta) */
-.hero-home {
-    background: linear-gradient(rgba(45,90,39,0.8), rgba(45,90,39,0.8)), url('https://images.unsplash.com/photo-1499728603963-bc0922fc71b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-    background-size: cover;
-    background-position: center;
-    padding: 60px 20px;
-}
-
-/* Navigazione */
+/* NAVIGAZIONE */
 nav {
     background: var(--white);
     padding: 15px 0;
@@ -62,7 +54,42 @@ nav a:hover { color: var(--accent); }
 .container { max-width: 1000px; margin: 0 auto; padding: 0 25px; }
 .section-padding { padding: 50px 0; }
 
-/* SEZIONE AREE DI INTERVENTO (Punto 4: Lista professionale) */
+/* HERO HOME SPECIFICA (Immagine sfondo-home.jpg) */
+.hero-home {
+    /* Filtro verde scuro sopra l'immagine per leggerezza testo */
+    background: linear-gradient(rgba(45,90,39,0.7), rgba(45,90,39,0.7)), url('sfondo-home.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px; /* Più alta per impatto visivo */
+    text-align: center;
+    color: white;
+}
+.hero-home h1 { color: white; font-size: 3rem; margin-bottom: 10px; }
+.hero-home p { font-size: 1.2rem; opacity: 0.95; }
+
+/* BIOGRAFIA E GRIGLIE */
+.bio-section {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+/* Layout speciale per la home senza foto */
+.bio-section-home {
+    display: block;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.bio-img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(45, 90, 39, 0.15);
+}
+
+/* LISTA AREE DI INTERVENTO */
 .areas-list-container {
     background: white;
     padding: 40px;
@@ -73,7 +100,7 @@ nav a:hover { color: var(--accent); }
 }
 .areas-grid-ul {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Due colonne ordinate */
+    grid-template-columns: 1fr 1fr;
     gap: 15px 30px;
     list-style: none;
     text-align: left;
@@ -94,34 +121,37 @@ nav a:hover { color: var(--accent); }
     line-height: 1;
 }
 
-/* Bio e Immagini */
-.bio-section {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 40px;
-    align-items: center;
-    margin-bottom: 50px;
+/* BOTTONE */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--accent);
+    color: var(--white) !important;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
 }
-.bio-img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(45, 90, 39, 0.15);
-}
+.btn:hover { background: var(--primary); transform: translateY(-2px); }
 
-/* Footer Unificato (Punto 3) */
+/* FOOTER STANDARD */
 footer {
-    background: #1a332a; /* Verde molto scuro */
-    color: rgba(255,255,255,0.8);
+    background: var(--primary); /* Verde Bosco identico all'header */
+    color: rgba(255,255,255,0.9);
     text-align: center;
-    padding: 30px 0;
+    padding: 40px 0;
     margin-top: 60px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    border-top: 4px solid var(--accent);
 }
-footer p { margin-bottom: 5px; }
+footer p { margin-bottom: 8px; }
 
-/* Mobile */
+/* MOBILE */
 @media (max-width: 768px) {
+    .container { padding: 0 30px; /* Margine di sicurezza aumentato */ }
     .bio-section { grid-template-columns: 1fr; }
-    .areas-grid-ul { grid-template-columns: 1fr; } /* Una colonna su mobile */
+    .areas-grid-ul { grid-template-columns: 1fr; }
+    .hero-home { padding: 80px 20px; }
+    .hero-home h1 { font-size: 2.2rem; }
     header h1 { font-size: 1.8rem; }
 }
