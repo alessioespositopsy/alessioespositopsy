@@ -307,3 +307,67 @@ footer {
 
   .footer-row { flex-direction: column; text-align: center; }
 }
+/* ============================================================
+   COOKIE CONSENT — vanilla-cookieconsent v3
+   Palette allineata alle variabili del sito
+   ============================================================ */
+:root {
+  --cc-bg: var(--paper);
+  --cc-primary-color: var(--ink);
+  --cc-secondary-color: var(--ink-soft);
+  --cc-btn-primary-bg: var(--sage-deep);
+  --cc-btn-primary-color: var(--paper);
+  --cc-btn-primary-border-color: var(--sage-deep);
+  --cc-btn-primary-hover-bg: var(--ink);
+  --cc-btn-primary-hover-color: var(--paper);
+  --cc-btn-primary-hover-border-color: var(--ink);
+  --cc-btn-secondary-bg: var(--paper-soft);
+  --cc-btn-secondary-color: var(--ink);
+  --cc-btn-secondary-border-color: var(--line);
+  --cc-btn-secondary-hover-bg: var(--paper-soft);
+  --cc-btn-secondary-hover-color: var(--ink);
+  --cc-btn-secondary-hover-border-color: var(--ink-soft);
+  --cc-toggle-on-bg: var(--sage-deep);
+  --cc-toggle-off-bg: var(--line);
+  --cc-separator-border-color: var(--line);
+  --cc-modal-border-radius: 14px;
+  --cc-btn-border-radius: 999px;
+}
+
+#cc-main .cm,
+#cc-main .pm {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 15px;
+}
+#cc-main .cm__title,
+#cc-main .pm__title {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+#cc-main .pm__section-desc {
+  color: var(--ink-soft);
+}
+
+/* ---------- MAPPA: placeholder pre-consenso ---------- */
+.map-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.map-placeholder {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper-soft);
+  padding: 24px;
+  text-align: center;
+}
+
+.map-placeholder p {
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
