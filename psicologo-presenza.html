@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lo Studio | Dott. Alessio Esposito - Psicologo Roma Prati</title>
-  <meta name="description" content="Studio di Psicologia a Roma Prati, Viale Giuseppe Mazzini 134. Ambiente accogliente e riservato, facilmente raggiungibile con Metro A (Lepanto). Ricevo su appuntamento.">
+  <meta name="description" content="Studio di Psicologia a Roma Prati, Viale Giuseppe Mazzini 134. Ambiente accogliente e riservato, facilmente raggiungibile con Metro A (Lepanto).">
 
   <meta property="og:title" content="Lo Studio | Dott. Alessio Esposito">
-  <meta property="og:description" content="Studio di Psicologia a Roma Prati, Viale Giuseppe Mazzini 134. Ambiente accogliente e riservato.">
+  <meta property="og:description" content="Studio di Psicologia a Roma Prati, Viale Giuseppe Mazzini 134.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alessioespositopsy.it/psicologo-presenza.html">
 
@@ -16,6 +16,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
   <link rel="stylesheet" href="stile.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css">
+
+  <script type="text/plain" data-cookiecategory="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script type="text/plain" data-cookiecategory="analytics">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+  </script>
 </head>
 <body>
 
@@ -23,9 +32,7 @@
   <div class="wrap nav">
     <a class="brand" href="index.html">Alessio Esposito</a>
     <button class="nav-toggle" aria-label="Apri menu" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -67,19 +74,38 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Dove trovarmi</h2>
-        <p>Il quartiere Prati è facilmente raggiungibile sia con i mezzi pubblici che in auto. La fermata Lepanto della Metro A dista pochi minuti a piedi.</p>
+        <p>Il quartiere Prati è facilmente raggiungibile sia con i mezzi pubblici che in auto. La fermata Lepanto della Metro A dista pochi minuti a piedi. La mappa interattiva si attiva dopo aver accettato i cookie funzionali.</p>
       </div>
-      <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.5!2d12.465!3d41.91!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6048c1e1e5e3%3A0x1e5c5b5e5e5e5e5e!2sViale%20Giuseppe%20Mazzini%20134%2C%2000195%20Roma%20RM!5e0!3m2!1sit!2sit!4v1600000000000!5m2!1sit!2sit"
-          width="100%" 
-          height="400" 
-          style="border:0; display:block;" 
-          allowfullscreen="" 
-          loading="lazy" 
+
+      <div class="map-wrap">
+        <div class="map-placeholder" id="map-placeholder">
+          <div>
+            <p>Per visualizzare la mappa interattiva è necessario accettare i cookie funzionali.</p>
+            <button type="button" class="btn btn-ghost" onclick="openCookiePreferences()">Gestisci preferenze</button>
+          </div>
+        </div>
+        <iframe
+          id="studio-map"
+          data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.5!2d12.465!3d41.91!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6048c1e1e5e3%3A0x1e5c5b5e5e5e5e5e!2sViale%20Giuseppe%20Mazzini%20134%2C%2000195%20Roma%20RM!5e0!3m2!1sit!2sit!4v1600000000000!5m2!1sit!2sit"
+          width="100%"
+          height="400"
+          style="border:0; display:none;"
+          allowfullscreen=""
+          loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Mappa dello studio in Viale Giuseppe Mazzini 134, Roma">
         </iframe>
+        <script type="text/plain" data-cookiecategory="functional">
+          (function(){
+            var m = document.getElementById('studio-map');
+            var p = document.getElementById('map-placeholder');
+            if (m && p && !m.src && m.dataset.src) {
+              m.src = m.dataset.src;
+              m.style.display = 'block';
+              p.style.display = 'none';
+            }
+          })();
+        </script>
       </div>
     </div>
   </section>
@@ -133,8 +159,9 @@
   <div class="wrap footer-row">
     <span>© Dott. Alessio Esposito — Psicologo Clinico, Albo del Lazio n. 27232</span>
     <ul class="footer-links">
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="cookie-policy.html">Cookie Policy</a></li>
       <li><a href="colloqui-online.html">Psicologo online</a></li>
-      <li><a href="primo-colloquio.html">Primo colloquio</a></li>
       <li><a href="contatti.html">Contatti</a></li>
     </ul>
   </div>
@@ -144,6 +171,8 @@
   <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+<script src="cookie-consent.js"></script>
 <script>
   function toggleMenu() {
     document.querySelector('.nav-links').classList.toggle('open');
